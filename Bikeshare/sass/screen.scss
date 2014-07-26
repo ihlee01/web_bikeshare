@@ -4,7 +4,10 @@
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
 @import "base";
-
+$primary-background: #eee;
+$orange: #FFA100;
+$blue: #65CFE9;
+$red: #E05206;
 *,
 *:after,
 *:before {
@@ -14,11 +17,70 @@ body {
 	overflow:hidden;
 	width: 100%;
 	height: 100%;
+	background: $primary-background;
 	font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 }
-.nav {
-	border: 1px solid #ccc;
-	padding:20px;
+.actionbar {
+	background: $orange;
+	color: white;
+	padding-left:10px;
+	padding-top:5px;
+	padding-bottom:5px;
 	width:100%;
-	@include border-radius(5px);
+	vertical-align: middle;
+	display:inline-block;
+	#logo {
+		width:32px;
+		height:32px;
+		margin-right:4px;
+	}
+	#appName {
+		vertical-align: middle;
+		margin-top: 3px;
+		@include font-size(8.5);
+	}
+}
+.search-box {
+	padding: 4px;
+	input {
+		height:36px;
+		width: 72.5%;
+		@include border-radius(2px);
+		padding-left: 30px;
+		@include font-size(8);
+		display:inline-block;
+	}
+	img {
+		position: absolute;
+		width: 30px;
+		height: 30px;
+		margin-top: 4px;
+		@include opacity(0.7);
+	}
+	#favoriteButton {
+		width:26%;
+		height:36px;
+		@include border-radius(2px);
+		background: white;
+		border: 1px solid #ccc;
+		text-align: center;
+		padding-top: 4px;
+		padding-bottom: 4px;
+		display: inline-block;
+		vertical-align: top;
+		font-weight: lighter;
+		cursor: pointer;
+		span {
+			vertical-align: sub;
+		}
+		#coloredBox {
+			border: 1px solid #ccc;
+			background: #ccc;
+			width: 40%;
+			margin: 0 auto;
+			height: 2px;
+			display: block;
+			margin-top: 5px;
+		}
+	}
 }
